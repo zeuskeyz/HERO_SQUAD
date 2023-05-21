@@ -1,0 +1,27 @@
+{{#partial "content"}}
+    <div class="card-body d-flex justify-content-around align-items-center my-5" >
+        <form action="/assign-squad/{{querySquad}}" method="post" class="my-5" class="card-body d-flex justify-content-center" >
+            <legend class="text-center mb-3" >ASSIGN YOUR HERO A SQUAD</legend>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="squad" name="squad" value="{{querySquad}}" required>
+                <label for="squad">Squad</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select" id="hero" name="hero">
+                    <option selected></option>
+                    {{#each heroObject}}
+                        <option value="{{hero}}">{{hero}}   ({{power}})</option>
+                    {{/each}}
+                </select>
+                <label for="hero">Hero</label>
+            </div>
+
+            <button type="submit" class="btn btn-dark col-12">SUBMIT</button>
+
+        </form>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}

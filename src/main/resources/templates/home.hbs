@@ -1,0 +1,68 @@
+{{#partial "content"}}
+    <div class = "container home">
+        <div class = "row">
+            <div class="container my-2 col-9">
+                {{#if heroObject}}
+                    <div class="row">
+                        {{#each heroObject}}
+                            <div class="card col-2 m-1 border border-0 opacity-75 p-0" style="max-width: 20rem;">
+                                <div class="card-header"> <h6 class="text-dark">{{hero}}</h6> </div>
+                                <div class="card-body shadow-lg text-bg-dark opacity-100">
+                                    <small class="card-text lead fs-6"><i class="bi bi-hourglass-split"></i> <small>{{age}}yrs</small></small><br>
+                                    <small class="card-text lead fs-6"><i class="bi bi-gem"></i>  <small>{{power}}</small></small><br>
+                                    <small class="card-text lead fs-6"><i class="bi bi-star-fill"></i> <small>{{power_score}}/10</small></small><br>
+                                    <small class="card-text lead fs-6"><i class="bi bi-cloud-rain-fill"></i> <small>{{weakness}}</small></small><br>
+                                    <div class="text-center d-flex justify-content-center align-items-bottom mt-1 mb-0"><a href="/delete-hero/{{hero}}" class="card-link shadow-sm text-light mt-1 mb-0" title="delete hero"><i class="bi bi-trash3 text-center"></i></a> </div>
+                                </div>
+                                <div class="card-footer text-end mt-0"> <h6>{{squad}}</h6> </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                {{else}}
+                    <div class="d-flex justify-content-center align-items-center my-5 py-5">  <h1 class="text-center my-5 py-5 lead">You currently have no Heroes.<br>Consider adding some using the button on your left below!</h1></div>
+                {{/if}}
+            </div>
+
+            <div class="container my-2 col-3">
+                {{#if squadObject}}
+                    <table class="table table-borderless" id="myTable">
+                        <tbody>
+                        {{#each squadObject}}
+                        <tr>
+                            <td>
+                                <a href = "/assign-squad/{{squad}}" class="btn btn-outline-secondary d-flex col-11" type="button">
+                                    <div class="text-start me-auto">{{squad}} </div>
+                                    <div class="ms-auto text-dark"> {{size}} <i class="bi bi-person-circle"></i></div>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/delete-squad/{{squad}}" class="text-end text-secondary text-decoration-none align-self-center" title="delete squad" > <i class="bi bi-x-square-fill fs-3"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                        </tbody>
+
+                    </table>
+
+                {{else}}
+                    <div class="d-flex justify-content-center align-items-center my-5 py-5">  <h3 class=" my-5 py-5 lead">You currently have no squads yet! Consider adding new squads with the right buttons below</h3> </div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
+
+<!--<div class="row">-->
+
+<!--    <div class="d-flex gap-2 justify-content-between align-items-center col-12">-->
+<!--        <a href = "/assign-squad/{{squad}}" class="btn btn-lg btn-outline-secondary d-flex col-11" type="button">-->
+<!--            <div class="text-start me-auto">{{squad}} </div>-->
+<!--            <div class=" ms-auto text-dark"> {{size}} <i class="bi bi-person-circle"></i></div>-->
+<!--        </a>-->
+<!--        <a href="/delete-squad/{{squad}}" class="text-end text-secondary text-decoration-none align-self-center" title="delete squad" > <i class="bi bi-x-square-fill fs-1"></i></a>-->
+<!--    </div>-->
+<!--</div>-->
+

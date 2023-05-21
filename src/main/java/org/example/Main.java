@@ -74,6 +74,7 @@ public abstract class Main {
 
         });
 
+        //HERO TO SQUAD ASSIGNMENT FORM
         get("/assign-squad/:squad", (req,res) -> {
 
             String squad =  req.params("squad");

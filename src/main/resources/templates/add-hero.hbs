@@ -1,0 +1,52 @@
+{{#partial "content"}}
+    <div>
+        <div class="card-body d-flex justify-content-center" >
+            <form action="/add-hero" method="post" class="my-5" >
+                <legend class="text-center text-light mb-3" >CREATE A HERO</legend>
+
+                <div class="mb-3 row">
+                    <div class="form-floating col-6">
+                        <input type="text" class="form-control ps-2" id="hero" name="hero" required>
+                        <label for="hero">Hero's Name</label>
+                    </div>
+
+                    <div class="form-floating col-6">
+                        <input type="text" class="form-control ps-2" id="age" name="age" required>
+                        <label for="age">Hero's Age</label>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="form-floating col-6">
+                        <input type="text" class="form-control ps-2" id="power" name="power" required>
+                        <label for="power">Hero's Power</label>
+                    </div>
+
+                    <div class="form-floating col-6">
+                        <input type="number" min="0" max="10" class="form-control ps-2" id="power_score" name="power_score" required>
+                        <label for="power_score">Power Score</label>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="form-floating col-6">
+                        <input type="text" class="form-control ps-2" id="weakness" name="weakness" required>
+                        <label for="weakness">Hero's Weakness</label>
+                    </div>
+
+                    <div class="form-floating col-6">
+                        <input type="number" min="0" max="10" class="form-control ps-2" id="weakness_score" name="weakness_score" required>
+                        <label for="weakness_score">Weakness Score</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-dark col-12">SUBMIT</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}

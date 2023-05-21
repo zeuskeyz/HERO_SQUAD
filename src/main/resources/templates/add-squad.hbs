@@ -1,0 +1,28 @@
+{{#partial "content"}}
+    <div class="card-body d-flex justify-content-center" >
+        <form action="/add-squad" method="post" class="my-5" >
+            <legend class="text-center text-light mb-3" >CREATE A HERO SQUAD</legend>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control " id="squad" name="squad" placeholder="Squad Name" required>
+                <label for="squad">Squad Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="cause" name="cause" placeholder="Squad Cause" required>
+                <label for="cause">Squad Cause</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" min="1" max="4" class="form-control" id="size" name="size" placeholder="Squad Size" required>
+                <label for="size">Squad Size</label>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark col-12">SUBMIT</button>
+            </div>
+
+        </form>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
